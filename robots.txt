@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cutlab-fdyv.onrender.com/sitemap.xml
