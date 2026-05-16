@@ -1,0 +1,2006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="CUT LAB is a premium video editing agency helping YouTube creators, brands and agencies grow with fast, cinematic edits. 48hr turnaround. Get your first edit free.">
+  <meta name="keywords" content="video editing agency, YouTube editing, short-form editing, video editor, brand ads, podcast editing, motion graphics, thumbnail design, CUT LAB">
+  <link rel="canonical" href="https://cutlab.studio/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="CUT LAB — Premium Video Editing Agency for Creators & Brands">
+  <meta property="og:description" content="Premium video editing for YouTube creators, brands and agencies. 48hr turnaround. Get your first edit free.">
+  <meta property="og:image" content="https://cutlab.studio/og-image.jpg">
+  <meta property="og:url" content="https://cutlab.studio/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CUT LAB — Premium Video Editing Agency for Creators & Brands">
+  <meta name="twitter:description" content="Premium video editing for YouTube creators, brands and agencies. 48hr turnaround. Get your first edit free.">
+  <meta name="twitter:image" content="https://cutlab.studio/og-image.jpg">
+  <title>CUT LAB — Premium Video Editing Agency for Creators & Brands</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-XSB3oDo0ANrjzQf5hJlmI5u7lYxWm8aI5d6m0R+Z4e4fQ5vFzO5fF7y3m0xw2CzWbLz7HnQx0xC4y8g1xY+Q7A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --bg-elevated: #141414;
+      --bg-card: #1a1a1a;
+      --bg-card-soft: #181818;
+      --text: #f5f5f5;
+      --muted: #999999;
+      --accent: #ff5500;
+      --accent-soft: rgba(255, 85, 0, 0.12);
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+      --font-head: 'Bebas Neue', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --container: 1180px;
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 14px;
+      --transition: 220ms ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background:
+        radial-gradient(circle at top left, rgba(255, 85, 0, 0.14), transparent 30%),
+        radial-gradient(circle at 80% 20%, rgba(255, 85, 0, 0.08), transparent 18%),
+        linear-gradient(180deg, #0d0d0d 0%, #090909 100%);
+      color: var(--text);
+      overflow-x: hidden;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg, video {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea {
+      font: inherit;
+    }
+
+    .site-shell {
+      position: relative;
+      isolation: isolate;
+    }
+
+    .noise-layer,
+    .grid-layer,
+    .orb {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+    }
+
+    .noise-layer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+      opacity: 0.08;
+      mix-blend-mode: soft-light;
+      animation: noiseShift 10s steps(10) infinite;
+    }
+
+    .grid-layer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 84px 84px;
+      -webkit-mask-image: radial-gradient(circle at center, black 42%, transparent 85%);
+      mask-image: radial-gradient(circle at center, black 42%, transparent 85%);
+      opacity: 0.38;
+    }
+
+    .orb::before,
+    .orb::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(10px);
+      opacity: 0.35;
+      mix-blend-mode: screen;
+      animation: floatOrb 14s ease-in-out infinite;
+    }
+
+    .orb::before {
+      width: 420px;
+      height: 420px;
+      top: -120px;
+      left: -100px;
+      background: radial-gradient(circle, rgba(255, 85, 0, 0.22), transparent 70%);
+    }
+
+    .orb::after {
+      width: 320px;
+      height: 320px;
+      right: -80px;
+      top: 26vh;
+      background: radial-gradient(circle, rgba(255, 85, 0, 0.16), transparent 68%);
+      animation-delay: -6s;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin: 0 auto;
+    }
+
+    .section {
+      position: relative;
+      padding: 100px 0;
+    }
+
+    .section--hero {
+      min-height: 100vh;
+      padding-top: 120px;
+      display: grid;
+      align-items: center;
+    }
+
+    .section__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 10px 16px;
+      border-radius: 999px;
+      color: var(--muted);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+    }
+
+    .section__eyebrow .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(255, 85, 0, 0.16);
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      transition: background-color var(--transition), border-color var(--transition), box-shadow var(--transition), backdrop-filter var(--transition);
+      border-bottom: 1px solid transparent;
+    }
+
+    .site-header.scrolled {
+      background: rgba(13, 13, 13, 0.86);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      border-bottom-color: rgba(255, 255, 255, 0.06);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    }
+
+    .site-header__inner {
+      width: min(calc(100% - 24px), var(--container));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 82px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 10px;
+      font-family: var(--font-head);
+      font-size: 2rem;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .logo__mark {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 auto;
+      display: block;
+      filter: drop-shadow(0 0 10px rgba(255, 85, 0, 0.28));
+    }
+
+    .logo__cut {
+      color: var(--text);
+    }
+
+    .logo__lab {
+      color: var(--accent);
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .site-nav__links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .site-nav__link {
+      position: relative;
+      color: var(--muted);
+      font-size: 0.96rem;
+      transition: color var(--transition);
+    }
+
+    .site-nav__link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform var(--transition);
+    }
+
+    .site-nav__link:hover,
+    .site-nav__link.is-active {
+      color: var(--text);
+    }
+
+    .site-nav__link:hover::after,
+    .site-nav__link.is-active::after {
+      transform: scaleX(1);
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 14px 22px;
+      cursor: pointer;
+      transition: transform var(--transition), background-color var(--transition), border-color var(--transition), box-shadow var(--transition), color var(--transition);
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button--primary {
+      background: var(--accent);
+      color: #111111;
+      box-shadow: 0 18px 30px rgba(255, 85, 0, 0.24);
+    }
+
+    .button--primary:hover {
+      box-shadow: 0 22px 36px rgba(255, 85, 0, 0.32);
+    }
+
+    .button--ghost {
+      background: rgba(255, 255, 255, 0.03);
+      border-color: rgba(255, 255, 255, 0.12);
+      color: var(--text);
+      -webkit-backdrop-filter: blur(14px);
+      backdrop-filter: blur(14px);
+    }
+
+    .button--ghost:hover {
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .button--nav {
+      padding-inline: 20px;
+    }
+
+    .site-nav__cta {
+      white-space: nowrap;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 32px;
+      max-width: 760px;
+      padding: 40px 0 60px;
+    }
+
+    .hero__title {
+      font-family: var(--font-head);
+      font-size: clamp(4.4rem, 10vw, 7.6rem);
+      line-height: 0.9;
+      letter-spacing: 0.04em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .hero__title span {
+      color: var(--accent);
+    }
+
+    .hero__subtitle {
+      margin: 0;
+      max-width: 640px;
+      font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+      line-height: 1.7;
+      color: #d4d4d4;
+    }
+
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .hero__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .hero__meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero__scroll {
+      position: absolute;
+      left: 50%;
+      bottom: 22px;
+      transform: translateX(-50%);
+      color: var(--muted);
+      display: grid;
+      place-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero__scroll i {
+      color: var(--accent);
+      animation: bounce 1.8s infinite;
+    }
+
+    .marquee {
+      overflow: hidden;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      background: #101010;
+      transform: rotate(-1.3deg);
+      margin: 10px 0;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03), inset 0 -1px 0 rgba(255, 255, 255, 0.03);
+    }
+
+    .marquee__track {
+      display: flex;
+      width: max-content;
+      gap: 24px;
+      padding: 18px 0;
+      animation: marquee 26s linear infinite;
+    }
+
+    .marquee__item {
+      white-space: nowrap;
+      color: var(--text);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .marquee__item .star {
+      color: var(--accent);
+      font-size: 0.75rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 700ms ease, transform 700ms ease;
+      transition-delay: var(--delay, 0ms);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .section__heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .section__title {
+      margin: 0;
+      font-family: var(--font-head);
+      font-size: clamp(3rem, 6vw, 5.1rem);
+      letter-spacing: 0.05em;
+      line-height: 0.95;
+      text-transform: uppercase;
+      max-width: 720px;
+    }
+
+    .section__lead {
+      margin: 0;
+      color: var(--muted);
+      max-width: 420px;
+      line-height: 1.75;
+    }
+
+    .services__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .service-card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 45%), var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 3px solid rgba(255, 85, 0, 0.95);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      min-height: 210px;
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 85, 0, 0.34);
+      box-shadow: 0 24px 54px rgba(0, 0, 0, 0.55);
+    }
+
+    .service-card__icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: rgba(255, 85, 0, 0.12);
+      color: var(--accent);
+      margin-bottom: 18px;
+      font-size: 1.2rem;
+    }
+
+    .service-card__icon svg,
+    .process-step__icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      display: block;
+    }
+
+    .service-card__title {
+      margin: 0 0 10px;
+      font-size: 1.42rem;
+      letter-spacing: 0.02em;
+    }
+
+    .service-card__text {
+      margin: 0;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+      gap: 30px;
+      align-items: start;
+    }
+
+    .stats__panel {
+      position: relative;
+      padding: 30px;
+      border-radius: var(--radius-xl);
+      background: linear-gradient(180deg, rgba(255, 85, 0, 0.08), rgba(255, 255, 255, 0.02)), var(--bg-card-soft);
+      border: 1px solid rgba(255, 85, 0, 0.14);
+      overflow: hidden;
+    }
+
+    .stats__panel::after {
+      content: '';
+      position: absolute;
+      inset: auto -80px -120px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 85, 0, 0.22), transparent 70%);
+      filter: blur(10px);
+    }
+
+    .stats__item {
+      display: grid;
+      gap: 10px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stats__item:last-child {
+      border-bottom: none;
+    }
+
+    .stats__value {
+      margin: 0;
+      color: var(--accent);
+      font-family: var(--font-head);
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.9;
+      letter-spacing: 0.04em;
+    }
+
+    .stats__label {
+      margin: 0;
+      color: var(--text);
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .stats__copy {
+      display: grid;
+      gap: 18px;
+    }
+
+    .stats__copy p {
+      margin: 0;
+      color: #cfcfcf;
+      line-height: 1.8;
+    }
+
+    .process__timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      padding-top: 24px;
+    }
+
+    .process__timeline::before {
+      content: '';
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 54px;
+      border-top: 2px dashed rgba(255, 85, 0, 0.45);
+    }
+
+    .process-step {
+      position: relative;
+      padding: 30px 20px 24px;
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      min-height: 240px;
+      box-shadow: var(--shadow);
+    }
+
+    .process-step__number {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #111111;
+      font-family: var(--font-head);
+      font-size: 2rem;
+      margin-bottom: 20px;
+      box-shadow: 0 0 0 10px rgba(255, 85, 0, 0.12);
+    }
+
+    .process-step__icon {
+      color: var(--accent);
+      margin-bottom: 12px;
+      font-size: 1.05rem;
+    }
+
+    .process-step__icon {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+    }
+
+    .process-step__title {
+      margin: 0 0 10px;
+      font-size: 1.32rem;
+      letter-spacing: 0.02em;
+    }
+
+    .process-step__text {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .pricing__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .pricing-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: 28px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 34%), var(--bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(255, 85, 0, 0.34);
+    }
+
+    .pricing-card--featured {
+      transform: scale(1.03);
+      border-color: rgba(255, 85, 0, 0.65);
+      box-shadow: 0 0 0 1px rgba(255, 85, 0, 0.3), 0 22px 60px rgba(255, 85, 0, 0.16), var(--shadow);
+      background: linear-gradient(180deg, rgba(255, 85, 0, 0.12), rgba(255, 255, 255, 0.02)), var(--bg-card);
+    }
+
+    .pricing-card__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      align-self: flex-start;
+      background: rgba(255, 85, 0, 0.12);
+      color: #ffd7c5;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+    }
+
+    .pricing-card__title {
+      margin: 0;
+      font-size: 1.55rem;
+      letter-spacing: 0.03em;
+    }
+
+    .pricing-card__price {
+      margin: 0;
+      font-family: var(--font-head);
+      font-size: clamp(3.3rem, 6vw, 4.6rem);
+      line-height: 1;
+      letter-spacing: 0.05em;
+    }
+
+    .pricing-card__price span {
+      font-size: 1rem;
+      color: var(--muted);
+      font-family: var(--font-body);
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .pricing-card__list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      color: #dbdbdb;
+    }
+
+    .pricing-card__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.6;
+    }
+
+    .pricing-card__list i {
+      color: var(--accent);
+      margin-top: 4px;
+      flex: 0 0 auto;
+    }
+
+    .pricing-card__footer {
+      margin-top: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    .pricing__note {
+      margin: 16px 0 0;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .testimonial-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      min-height: 100%;
+    }
+
+    .testimonial-card::before {
+      content: '“';
+      position: absolute;
+      top: 12px;
+      right: 18px;
+      color: rgba(255, 85, 0, 0.22);
+      font-family: var(--font-head);
+      font-size: 7rem;
+      line-height: 1;
+    }
+
+    .testimonial-card__quote {
+      margin: 0 0 18px;
+      line-height: 1.8;
+      color: #e2e2e2;
+    }
+
+    .testimonial-card__person {
+      margin: 0;
+      display: grid;
+      gap: 4px;
+    }
+
+    .testimonial-card__name {
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+
+    .testimonial-card__meta {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .faq {
+      display: grid;
+      gap: 14px;
+    }
+
+    .faq-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .faq-item__toggle {
+      width: 100%;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .faq-item__toggle span {
+      font-size: 1.06rem;
+      font-weight: 700;
+    }
+
+    .faq-item__toggle i {
+      color: var(--accent);
+      transition: transform var(--transition);
+    }
+
+    .faq-item.is-open .faq-item__toggle i {
+      transform: rotate(180deg);
+    }
+
+    .faq-item__panel {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 280ms ease;
+    }
+
+    .faq-item__panel-inner {
+      padding: 0 24px 22px;
+      color: var(--muted);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      background:
+        radial-gradient(circle at 18% 30%, rgba(255, 85, 0, 0.28), transparent 28%),
+        radial-gradient(circle at 82% 70%, rgba(255, 85, 0, 0.16), transparent 26%),
+        linear-gradient(180deg, rgba(255, 85, 0, 0.07), rgba(255, 255, 255, 0.01));
+    }
+
+    .cta__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
+      gap: 30px;
+      align-items: center;
+    }
+
+    .cta__title {
+      margin: 0 0 14px;
+      font-family: var(--font-head);
+      font-size: clamp(3rem, 6vw, 5.6rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      max-width: 700px;
+    }
+
+    .cta__copy {
+      margin: 0;
+      color: #dedede;
+      line-height: 1.8;
+      max-width: 620px;
+      font-size: 1.04rem;
+    }
+
+    .contact-card {
+      padding: 28px;
+      border-radius: var(--radius-xl);
+      background: rgba(13, 13, 13, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.4);
+      -webkit-backdrop-filter: blur(16px);
+      backdrop-filter: blur(16px);
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    .field label {
+      color: #d7d7d7;
+      font-size: 0.95rem;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--text);
+      border-radius: 16px;
+      padding: 14px 16px;
+      outline: none;
+      transition: border-color var(--transition), box-shadow var(--transition), background-color var(--transition);
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: #7f7f7f;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      border-color: rgba(255, 85, 0, 0.75);
+      box-shadow: 0 0 0 4px rgba(255, 85, 0, 0.12);
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .field textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-message {
+      margin: 0;
+      min-height: 1.4em;
+      color: #ffd7c5;
+      font-size: 0.95rem;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 16px;
+      color: var(--muted);
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #e6e6e6;
+    }
+
+    .contact-links a:hover {
+      color: var(--accent);
+    }
+
+    .site-footer {
+      padding: 48px 0 20px;
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .site-footer__grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.7fr 0.7fr;
+      gap: 28px;
+      align-items: start;
+      padding-bottom: 28px;
+    }
+
+    .site-footer__tagline {
+      margin: 12px 0 0;
+      color: var(--muted);
+      max-width: 280px;
+      line-height: 1.7;
+    }
+
+    .site-footer__title {
+      margin: 0 0 14px;
+      color: #d4d4d4;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .site-footer__links,
+    .site-footer__social {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .site-footer__links a,
+    .site-footer__social a {
+      color: var(--muted);
+      transition: color var(--transition), transform var(--transition);
+    }
+
+    .site-footer__links a:hover,
+    .site-footer__social a:hover {
+      color: var(--text);
+    }
+
+    .site-footer__bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .mobile-nav {
+      display: none;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(13, 13, 13, 0.96);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 300ms ease;
+    }
+
+    .mobile-nav.is-open {
+      max-height: 420px;
+    }
+
+    .mobile-nav__inner {
+      width: min(calc(100% - 24px), var(--container));
+      margin: 0 auto;
+      padding: 14px 0 22px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .mobile-nav__link {
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      color: var(--muted);
+    }
+
+    .mobile-nav__link:last-child {
+      border-bottom: 0;
+    }
+
+    .mobile-nav__cta {
+      margin-top: 8px;
+    }
+
+    .nav-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.36);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 200ms ease, visibility 200ms ease;
+      z-index: 900;
+    }
+
+    .nav-backdrop.is-open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-10px); }
+      60% { transform: translateY(-5px); }
+    }
+
+    @keyframes noiseShift {
+      0% { transform: translate3d(0, 0, 0); }
+      100% { transform: translate3d(-3%, 4%, 0); }
+    }
+
+    @keyframes floatOrb {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(18px) scale(1.08); }
+    }
+
+    @media (max-width: 1200px) {
+      .services__grid,
+      .pricing__grid,
+      .testimonials__grid,
+      .site-footer__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .process__timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .process__timeline::before {
+        display: none;
+      }
+
+      .cta__grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card--featured {
+        transform: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .site-header__inner {
+        min-height: 72px;
+      }
+
+      .site-nav__links,
+      .site-nav__cta {
+        display: none;
+      }
+
+      .menu-toggle,
+      .mobile-nav {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .hero {
+        gap: 24px;
+      }
+
+      .hero__title {
+        font-size: clamp(3.8rem, 14vw, 5.8rem);
+      }
+
+      .hero__actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero__actions .button {
+        width: 100%;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .section--hero {
+        min-height: 100svh;
+        padding-top: 112px;
+      }
+
+      .section__heading {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .services__grid,
+      .pricing__grid,
+      .testimonials__grid,
+      .site-footer__grid,
+      .process__timeline {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial-card {
+        scroll-snap-align: start;
+        min-width: 82vw;
+      }
+
+      .testimonials__grid {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 82vw;
+        overflow-x: auto;
+        padding-bottom: 8px;
+        scroll-snap-type: x mandatory;
+      }
+
+      .testimonials__grid::-webkit-scrollbar {
+        height: 6px;
+      }
+
+      .testimonials__grid::-webkit-scrollbar-thumb {
+        background: rgba(255, 85, 0, 0.4);
+        border-radius: 999px;
+      }
+
+      .site-footer__bottom {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+      }
+
+      .logo__mark {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      .hero__title {
+        font-size: clamp(3.5rem, 17vw, 5.3rem);
+      }
+
+      .stats__panel,
+      .contact-card,
+      .service-card,
+      .pricing-card,
+      .testimonial-card,
+      .process-step {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .faq-item__toggle,
+      .faq-item__panel-inner {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://cutlab.studio/#business",
+        "name": "CUT LAB",
+        "url": "https://cutlab.studio/",
+        "logo": "https://cutlab.studio/logo.png",
+        "image": "https://cutlab.studio/og-image.jpg",
+        "description": "Premium video editing agency for creators, brands and agencies.",
+        "areaServed": ["US", "UK", "EU"],
+        "sameAs": [
+          "https://instagram.com/",
+          "https://youtube.com/",
+          "https://tiktok.com/",
+          "https://linkedin.com/"
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://cutlab.studio/#service",
+        "name": "Premium Video Editing",
+        "serviceType": ["YouTube Editing", "Short-Form Content", "Brand Ads", "Podcast Editing", "Motion Graphics", "Thumbnail Design"],
+        "provider": {
+          "@id": "https://cutlab.studio/#business"
+        },
+        "areaServed": ["US", "UK", "EU"]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="site-shell">
+    <div class="noise-layer"></div>
+    <div class="grid-layer"></div>
+    <div class="orb"></div>
+
+    <header class="site-header" id="siteHeader">
+      <div class="site-header__inner">
+        <a class="logo" href="#hero" aria-label="CUT LAB home">
+          <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+            <path d="M14 18h36L38 32l12 14H14l12-14-12-14Z" fill="rgba(255,85,0,0.16)" stroke="#ff5500"></path>
+            <path d="M24 22h16l-8 10 8 10H24l8-10-8-10Z" fill="#0d0d0d" stroke="rgba(245,245,245,0.65)"></path>
+          </svg>
+          <span class="logo__cut">CUT</span><span class="logo__lab">LAB</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <ul class="site-nav__links">
+            <li><a class="site-nav__link" href="#work">Work</a></li>
+            <li><a class="site-nav__link" href="#services">Services</a></li>
+            <li><a class="site-nav__link" href="#process">Process</a></li>
+            <li><a class="site-nav__link" href="#pricing">Pricing</a></li>
+            <li><a class="site-nav__link" href="#contact">Contact</a></li>
+          </ul>
+          <a class="button button--primary button--nav site-nav__cta" href="#contact" aria-label="Get started with CUT LAB">Get Started</a>
+          <button class="menu-toggle" type="button" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+
+      <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav__inner">
+          <a class="mobile-nav__link" href="#work">Work</a>
+          <a class="mobile-nav__link" href="#services">Services</a>
+          <a class="mobile-nav__link" href="#process">Process</a>
+          <a class="mobile-nav__link" href="#pricing">Pricing</a>
+          <a class="mobile-nav__link" href="#contact">Contact</a>
+          <a class="button button--primary mobile-nav__cta" href="#contact">Get Started</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="nav-backdrop" id="navBackdrop" aria-hidden="true"></div>
+
+    <main>
+      <section class="section section--hero" id="hero">
+        <div class="container">
+          <div class="hero reveal is-visible">
+            <div class="section__eyebrow"><span class="dot"></span> Premium editing for western brands and creators</div>
+            <h1 class="hero__title">WE EDIT. YOU <span>GROW.</span></h1>
+            <p class="hero__subtitle">Premium video editing for YouTube creators, brands &amp; agencies — built for virality, retention and polished delivery across US, UK and EU markets.</p>
+            <div class="hero__actions">
+              <a class="button button--primary" href="#contact">Get a Free Edit</a>
+              <a class="button button--ghost" href="#work">View Our Work</a>
+            </div>
+            <div class="hero__meta" aria-label="Agency highlights">
+              <span><i class="fa-solid fa-bolt"></i> 48hr turnaround</span>
+              <span><i class="fa-solid fa-sparkles"></i> Cinematic retention edits</span>
+              <span><i class="fa-solid fa-flag-usa"></i> US / UK / EU friendly</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__scroll" aria-hidden="true">
+          <i class="fa-solid fa-arrow-down-long"></i>
+          <span>Scroll</span>
+        </div>
+      </section>
+
+      <section class="marquee" aria-label="Social proof marquee">
+        <div class="marquee__track" aria-hidden="true">
+          <div class="marquee__item"><span class="star">★</span> YouTube <span class="star">★</span> Reels <span class="star">★</span> TikToks <span class="star">★</span> Brand Ads <span class="star">★</span> Podcasts <span class="star">★</span> Short-Form <span class="star">★</span> Long-Form <span class="star">★</span> Talking Heads <span class="star">★</span> Motion Graphics</div>
+          <div class="marquee__item"><span class="star">★</span> YouTube <span class="star">★</span> Reels <span class="star">★</span> TikToks <span class="star">★</span> Brand Ads <span class="star">★</span> Podcasts <span class="star">★</span> Short-Form <span class="star">★</span> Long-Form <span class="star">★</span> Talking Heads <span class="star">★</span> Motion Graphics</div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="services" data-delay="60">
+        <div class="container">
+          <div class="section__heading">
+            <div>
+              <div class="section__eyebrow"><span class="dot"></span> What we cut</div>
+              <h2 class="section__title">What We Cut</h2>
+            </div>
+            <p class="section__lead">From long-form retention edits to launch-day ad creatives, CUT LAB is built to make every frame work harder for growth.</p>
+          </div>
+
+          <div class="services__grid">
+            <article class="service-card reveal" data-delay="0">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 7h16v10H4z"></path>
+                  <path d="M7 7l2-3"></path>
+                  <path d="M11 7l2-3"></path>
+                  <path d="M15 7l2-3"></path>
+                  <path d="M4 11h16"></path>
+                </svg>
+              </div>
+              <h3 class="service-card__title">YouTube Editing</h3>
+              <p class="service-card__text">Long-form, retention-optimized edits built around pacing, storytelling and audience watch time.</p>
+            </article>
+            <article class="service-card reveal" data-delay="40">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M9 7l8 5-8 5V7Z"></path>
+                  <path d="M4 19h16"></path>
+                </svg>
+              </div>
+              <h3 class="service-card__title">Short-Form Content</h3>
+              <p class="service-card__text">Reels, Shorts and TikToks designed to stop the scroll and keep viewers locked in.</p>
+            </article>
+            <article class="service-card reveal" data-delay="80">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 14l10-5v6L4 10v4Z"></path>
+                  <path d="M14 9l5-3v12l-5-3"></path>
+                </svg>
+              </div>
+              <h3 class="service-card__title">Brand &amp; Ad Edits</h3>
+              <p class="service-card__text">Polished commercial cuts for paid campaigns, product launches and brand storytelling.</p>
+            </article>
+            <article class="service-card reveal" data-delay="120">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="8" y="3" width="8" height="11" rx="4"></rect>
+                  <path d="M6 11v1a6 6 0 0 0 12 0v-1"></path>
+                  <path d="M12 18v3"></path>
+                  <path d="M9 21h6"></path>
+                </svg>
+              </div>
+              <h3 class="service-card__title">Podcast Production</h3>
+              <p class="service-card__text">Video and audio cleanup, captions, b-roll inserts and structure that keeps episodes clean and watchable.</p>
+            </article>
+            <article class="service-card reveal" data-delay="160">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 20l10-10"></path>
+                  <path d="M13 4l7 7"></path>
+                  <path d="M15 2l7 7"></path>
+                  <path d="M17 12l5 5"></path>
+                  <path d="M6 4l1.2 2.8L10 8l-2.8 1.2L6 12l-1.2-2.8L2 8l2.8-1.2L6 4Z"></path>
+                </svg>
+              </div>
+              <h3 class="service-card__title">Motion Graphics</h3>
+              <p class="service-card__text">Titles, transitions and animated overlays that add polish without killing momentum.</p>
+            </article>
+            <article class="service-card reveal" data-delay="200">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <rect x="4" y="5" width="16" height="14" rx="3"></rect>
+                  <path d="M8 11l2.5 2.5L14 10l5 5"></path>
+                  <circle cx="9" cy="9" r="1"></circle>
+                </svg>
+              </div>
+              <h3 class="service-card__title">Thumbnail Design</h3>
+              <p class="service-card__text">Scroll-stopping thumbnails crafted for click-through and visual consistency across channels.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="work" data-delay="60">
+        <div class="container">
+          <div class="section__heading">
+            <div>
+              <div class="section__eyebrow"><span class="dot"></span> Why editors choose CUT LAB</div>
+              <h2 class="section__title">Why Editors Choose CUT LAB</h2>
+            </div>
+            <p class="section__lead">We pair speed with taste. That means fast handoffs, clean communication and edits that actually help content convert.</p>
+          </div>
+
+          <div class="stats">
+            <div class="stats__panel reveal" data-delay="0">
+              <div class="stats__item">
+                <p class="stats__value"><span class="stat-counter" data-count="48" data-suffix="Hr" data-format="compact">0</span></p>
+                <p class="stats__label">Turnaround</p>
+              </div>
+              <div class="stats__item">
+                <p class="stats__value"><span class="stat-counter" data-count="100" data-suffix="+" data-format="compact">0</span></p>
+                <p class="stats__label">Projects Delivered</p>
+              </div>
+              <div class="stats__item">
+                <p class="stats__value"><span class="stat-counter" data-count="4" data-suffix=" Countries" data-format="compact">0</span></p>
+                <p class="stats__label">Countries Served</p>
+              </div>
+              <div class="stats__item">
+                <p class="stats__value"><span class="stat-counter" data-count="98" data-suffix="%" data-format="compact">0</span></p>
+                <p class="stats__label">Client Retention</p>
+              </div>
+            </div>
+
+            <div class="stats__copy reveal" data-delay="100">
+              <p>CUT LAB is designed for teams that care about taste, speed and conversion. We work with creators who need retention-first pacing, brands that want cleaner ads, and agencies that need reliable post-production support.</p>
+              <p>The result is a system that feels in-house without the overhead: structured feedback loops, fast revisions, and outputs tuned to how audiences in the US, UK and EU actually consume content.</p>
+              <p>Need a trial? We offer a free first edit so you can see the quality before you commit.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="process" data-delay="60">
+        <div class="container">
+          <div class="section__heading">
+            <div>
+              <div class="section__eyebrow"><span class="dot"></span> How it works</div>
+              <h2 class="section__title">How It Works</h2>
+            </div>
+            <p class="section__lead">A simple four-step pipeline so every project stays clear, fast and easy to approve.</p>
+          </div>
+
+          <div class="process__timeline">
+            <article class="process-step reveal" data-delay="0">
+              <div class="process-step__number">1</div>
+              <div class="process-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 5h16v10H8l-4 4V5Z"></path></svg>
+              </div>
+              <h3 class="process-step__title">Brief Us</h3>
+              <p class="process-step__text">Send your footage, references and goals. We map the edit to your audience and timeline.</p>
+            </article>
+            <article class="process-step reveal" data-delay="60">
+              <div class="process-step__number">2</div>
+              <div class="process-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M5 5l14 14"></path><path d="M19 5L5 19"></path><circle cx="6" cy="6" r="2"></circle><circle cx="18" cy="18" r="2"></circle></svg>
+              </div>
+              <h3 class="process-step__title">We Edit</h3>
+              <p class="process-step__text">We cut the story, pace the hooks and add the polish that keeps viewers watching.</p>
+            </article>
+            <article class="process-step reveal" data-delay="120">
+              <div class="process-step__number">3</div>
+              <div class="process-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M4 20h16"></path><path d="M7 17l10-10 3 3-10 10H7v-3Z"></path></svg>
+              </div>
+              <h3 class="process-step__title">You Review</h3>
+              <p class="process-step__text">You get a clean review link and can request revisions in one simple thread.</p>
+            </article>
+            <article class="process-step reveal" data-delay="180">
+              <div class="process-step__number">4</div>
+              <div class="process-step__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M3 7h11v10H3z"></path><path d="M14 10h4l3 3v4h-7z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>
+              </div>
+              <h3 class="process-step__title">Delivered</h3>
+              <p class="process-step__text">Final exports are delivered in the correct formats, ready to publish across platforms.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="pricing" data-delay="60">
+        <div class="container">
+          <div class="section__heading">
+            <div>
+              <div class="section__eyebrow"><span class="dot"></span> Transparent pricing</div>
+              <h2 class="section__title">Simple, Transparent Pricing</h2>
+            </div>
+            <p class="section__lead">Choose the level of support that fits your output. Custom plans are available for higher-volume teams.</p>
+          </div>
+
+          <div class="pricing__grid">
+            <article class="pricing-card reveal" data-delay="0">
+              <p class="pricing-card__title">Starter</p>
+              <p class="pricing-card__price">$499 <span>/ month</span></p>
+              <ul class="pricing-card__list">
+                <li><i class="fa-solid fa-check"></i> 4 edits per month</li>
+                <li><i class="fa-solid fa-check"></i> 48hr turnaround</li>
+                <li><i class="fa-solid fa-check"></i> 1 revision round</li>
+                <li><i class="fa-solid fa-check"></i> Best for solo creators</li>
+              </ul>
+              <div class="pricing-card__footer">
+                <a class="button button--ghost" href="#contact">Get Started</a>
+              </div>
+            </article>
+
+            <article class="pricing-card pricing-card--featured reveal" data-delay="60">
+              <span class="pricing-card__badge"><i class="fa-solid fa-star"></i> Most Popular</span>
+              <p class="pricing-card__title">Growth</p>
+              <p class="pricing-card__price">$999 <span>/ month</span></p>
+              <ul class="pricing-card__list">
+                <li><i class="fa-solid fa-check"></i> 8 edits per month</li>
+                <li><i class="fa-solid fa-check"></i> Short-form repurposing</li>
+                <li><i class="fa-solid fa-check"></i> Thumbnails on request</li>
+                <li><i class="fa-solid fa-check"></i> Priority queue + revisions</li>
+              </ul>
+              <div class="pricing-card__footer">
+                <a class="button button--primary" href="#contact">Get Started</a>
+              </div>
+            </article>
+
+            <article class="pricing-card reveal" data-delay="120">
+              <p class="pricing-card__title">Agency</p>
+              <p class="pricing-card__price">Custom <span>/ project</span></p>
+              <ul class="pricing-card__list">
+                <li><i class="fa-solid fa-check"></i> Unlimited scopes by quote</li>
+                <li><i class="fa-solid fa-check"></i> White-label delivery</li>
+                <li><i class="fa-solid fa-check"></i> Team communication</li>
+                <li><i class="fa-solid fa-check"></i> Dedicated post-production support</li>
+              </ul>
+              <div class="pricing-card__footer">
+                <a class="button button--ghost" href="#contact">Get Started</a>
+              </div>
+            </article>
+          </div>
+
+          <p class="pricing__note">Custom plans available — contact us</p>
+        </div>
+      </section>
+
+      <section class="section reveal" data-delay="60">
+        <div class="container">
+          <div class="section__heading">
+            <div>
+              <div class="section__eyebrow"><span class="dot"></span> Social proof</div>
+              <h2 class="section__title">Clients Who Scaled With Us</h2>
+            </div>
+            <p class="section__lead">A few examples of the kind of feedback we get when the cut actually helps the content perform.</p>
+          </div>
+
+          <div class="testimonials__grid">
+            <article class="testimonial-card reveal" data-delay="0">
+              <p class="testimonial-card__quote">CUT LAB made our long-form videos feel like a premium show. Retention improved on the first three uploads and our team finally got a process we could trust.</p>
+              <p class="testimonial-card__person"><span class="testimonial-card__name">Mason Reed 🇺🇸</span><span class="testimonial-card__meta">YouTube creator, fitness niche</span></p>
+            </article>
+            <article class="testimonial-card reveal" data-delay="60">
+              <p class="testimonial-card__quote">The short-form output is sharp, fast and on-brand. We use CUT LAB for campaign content because they understand how ads need to feel in the first five seconds.</p>
+              <p class="testimonial-card__person"><span class="testimonial-card__name">Lena Brooks 🇬🇧</span><span class="testimonial-card__meta">Performance marketer, DTC brand</span></p>
+            </article>
+            <article class="testimonial-card reveal" data-delay="120">
+              <p class="testimonial-card__quote">Our podcast workflow got dramatically easier. They cleaned the audio, added visuals, and delivered cuts that felt consistent across the whole season.</p>
+              <p class="testimonial-card__person"><span class="testimonial-card__name">Jonas Weber 🇩🇪</span><span class="testimonial-card__meta">Founder, B2B media company</span></p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" data-delay="60">
+        <div class="container">
+          <div class="section__heading">
+            <div>
+              <div class="section__eyebrow"><span class="dot"></span> FAQ</div>
+              <h2 class="section__title">Common Questions</h2>
+            </div>
+            <p class="section__lead">Quick answers to the most common questions about turnaround, revisions, files and communication.</p>
+          </div>
+
+          <div class="faq" id="faqAccordion">
+            <div class="faq-item">
+              <button class="faq-item__toggle" type="button" aria-expanded="false">
+                <span>How fast is turnaround?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-item__panel">
+                <p class="faq-item__panel-inner">Standard delivery is 48 hours for most projects, with faster options available for urgent campaigns and launch content.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-item__toggle" type="button" aria-expanded="false">
+                <span>How many revisions do I get?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-item__panel">
+                <p class="faq-item__panel-inner">Most plans include at least one revision round. Higher tiers include priority revisions and more flexibility for iteration.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-item__toggle" type="button" aria-expanded="false">
+                <span>What file formats do you deliver?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-item__panel">
+                <p class="faq-item__panel-inner">We deliver the format you need for YouTube, social and ad platforms, including platform-ready exports and source handoff on request.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-item__toggle" type="button" aria-expanded="false">
+                <span>How do we communicate?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-item__panel">
+                <p class="faq-item__panel-inner">We keep communication clean and simple through email or your preferred project tool so feedback never gets lost.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-item__toggle" type="button" aria-expanded="false">
+                <span>What payment terms do you use?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-item__panel">
+                <p class="faq-item__panel-inner">Monthly retainers are billed in advance and one-off projects can be split into milestones depending on scope.</p>
+              </div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-item__toggle" type="button" aria-expanded="false">
+                <span>Do you offer a trial edit?</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div class="faq-item__panel">
+                <p class="faq-item__panel-inner">Yes. We offer a free first edit so you can assess quality and fit before committing to a full package.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta reveal" id="contact" data-delay="60">
+        <div class="container">
+          <div class="cta__grid">
+            <div>
+              <div class="section__eyebrow"><span class="dot"></span> Contact / CTA</div>
+              <h2 class="cta__title">Ready to Level Up Your Content?</h2>
+              <p class="cta__copy">Get your first edit free. No commitment. Send us the footage, the goal and the vibe you want, and we’ll handle the cut.</p>
+            </div>
+
+            <div class="contact-card">
+              <form class="contact-form" id="contactForm" novalidate>
+                <div class="field">
+                  <label for="name">Name</label>
+                  <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required>
+                </div>
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+                </div>
+                <div class="field">
+                  <label for="link">YouTube / Social Link</label>
+                  <input id="link" name="link" type="url" placeholder="https://youtube.com/@..." required>
+                </div>
+                <div class="field">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Tell us about your content, goals and timeline" required></textarea>
+                </div>
+                <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+                <button class="button button--primary" type="submit">Send Inquiry</button>
+              </form>
+
+              <div class="contact-links" aria-label="Direct contact links">
+                <a href="mailto:hello@cutlab.studio"><i class="fa-solid fa-envelope"></i> hello@cutlab.studio</a>
+                <a href="https://wa.me/000000000000" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="site-footer__grid">
+          <div>
+            <a class="logo" href="#hero" aria-label="CUT LAB home">
+              <svg class="logo__mark" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+                <path d="M14 18h36L38 32l12 14H14l12-14-12-14Z" fill="rgba(255,85,0,0.16)" stroke="#ff5500"></path>
+                <path d="M24 22h16l-8 10 8 10H24l8-10-8-10Z" fill="#0d0d0d" stroke="rgba(245,245,245,0.65)"></path>
+              </svg>
+              <span class="logo__cut">CUT</span><span class="logo__lab">LAB</span>
+            </a>
+            <p class="site-footer__tagline">Premium video editing for creators, brands and agencies that want more watch time, stronger branding and faster growth.</p>
+          </div>
+          <div>
+            <p class="site-footer__title">Navigate</p>
+            <ul class="site-footer__links">
+              <li><a href="#work">Work</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#process">Process</a></li>
+              <li><a href="#pricing">Pricing</a></li>
+            </ul>
+          </div>
+          <div>
+            <p class="site-footer__title">Social</p>
+            <ul class="site-footer__social">
+              <li><a href="https://instagram.com/" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-instagram"></i> Instagram</a></li>
+              <li><a href="https://youtube.com/" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-youtube"></i> YouTube</a></li>
+              <li><a href="https://tiktok.com/" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-tiktok"></i> TikTok</a></li>
+              <li><a href="https://linkedin.com/" target="_blank" rel="noreferrer noopener"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="site-footer__bottom">
+          <span>© 2025 CUT LAB · All Rights Reserved</span>
+          <span>Built for creators, brands and agencies.</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (() => {
+      const header = document.getElementById('siteHeader');
+      const menuToggle = document.getElementById('menuToggle');
+      const mobileNav = document.getElementById('mobileNav');
+      const navBackdrop = document.getElementById('navBackdrop');
+      const navLinks = Array.from(document.querySelectorAll('.site-nav__link, .mobile-nav__link'));
+      const revealElements = Array.from(document.querySelectorAll('.reveal'));
+      const statCounters = Array.from(document.querySelectorAll('.stat-counter')); 
+      const faqItems = Array.from(document.querySelectorAll('.faq-item'));
+      const contactForm = document.getElementById('contactForm');
+      const formMessage = document.getElementById('formMessage');
+      const sections = ['work', 'services', 'process', 'pricing', 'contact'].map((id) => document.getElementById(id)).filter(Boolean);
+
+      document.querySelectorAll('[data-delay]').forEach((element) => {
+        element.style.setProperty('--delay', `${element.dataset.delay}ms`);
+      });
+
+      const closeMobileNav = () => {
+        mobileNav.classList.remove('is-open');
+        navBackdrop.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      };
+
+      const openMobileNav = () => {
+        mobileNav.classList.add('is-open');
+        navBackdrop.classList.add('is-open');
+        menuToggle.setAttribute('aria-expanded', 'true');
+        menuToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+      };
+
+      const toggleMobileNav = () => {
+        if (mobileNav.classList.contains('is-open')) {
+          closeMobileNav();
+        } else {
+          openMobileNav();
+        }
+      };
+
+      menuToggle.addEventListener('click', toggleMobileNav);
+      navBackdrop.addEventListener('click', closeMobileNav);
+      mobileNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileNav));
+
+      const setActiveNav = (activeId) => {
+        navLinks.forEach((link) => {
+          const target = link.getAttribute('href');
+          link.classList.toggle('is-active', target === `#${activeId}`);
+        });
+      };
+
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('scrolled', window.scrollY > 80);
+      }, { passive: true });
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.18, rootMargin: '0px 0px -8% 0px' });
+
+      revealElements.forEach((element) => revealObserver.observe(element));
+
+      const animateCounter = (element) => {
+        const target = Number(element.dataset.count || '0');
+        const suffix = element.dataset.suffix || '';
+        const duration = 1500;
+        const startTime = performance.now();
+
+        const step = (now) => {
+          const progress = Math.min((now - startTime) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const value = Math.round(target * eased);
+          element.textContent = `${value}${suffix}`;
+
+          if (progress < 1) {
+            requestAnimationFrame(step);
+          }
+        };
+
+        requestAnimationFrame(step);
+      };
+
+      const statsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          animateCounter(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, { threshold: 0.5 });
+
+      statCounters.forEach((counter) => statsObserver.observe(counter));
+
+      const faqResize = (panel, open) => {
+        panel.style.maxHeight = open ? `${panel.scrollHeight}px` : '0px';
+      };
+
+      faqItems.forEach((item) => {
+        const button = item.querySelector('.faq-item__toggle');
+        const panel = item.querySelector('.faq-item__panel');
+
+        button.addEventListener('click', () => {
+          const open = item.classList.contains('is-open');
+          faqItems.forEach((otherItem) => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('is-open');
+              const otherButton = otherItem.querySelector('.faq-item__toggle');
+              const otherPanel = otherItem.querySelector('.faq-item__panel');
+              otherButton.setAttribute('aria-expanded', 'false');
+              faqResize(otherPanel, false);
+            }
+          });
+
+          item.classList.toggle('is-open', !open);
+          button.setAttribute('aria-expanded', String(!open));
+          faqResize(panel, !open);
+        });
+      });
+
+      const currentSectionObserver = new IntersectionObserver((entries) => {
+        const visible = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) {
+          setActiveNav(visible.target.id);
+        }
+      }, { threshold: [0.25, 0.4, 0.55], rootMargin: '-20% 0px -60% 0px' });
+
+      sections.forEach((section) => currentSectionObserver.observe(section));
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', (event) => {
+          const targetId = anchor.getAttribute('href').slice(1);
+          const target = document.getElementById(targetId);
+
+          if (!target) {
+            return;
+          }
+
+          event.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      });
+
+      const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
+
+      contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const name = contactForm.name.value.trim();
+        const email = contactForm.email.value.trim();
+        const link = contactForm.link.value.trim();
+        const message = contactForm.message.value.trim();
+
+        if (!name || !validateEmail(email) || !link || !message) {
+          formMessage.textContent = 'Please complete all fields with a valid email and link.';
+          formMessage.style.color = '#ffb08a';
+          return;
+        }
+
+        formMessage.textContent = 'Thanks. Your inquiry has been received. We will reply shortly.';
+        formMessage.style.color = '#ffd7c5';
+        contactForm.reset();
+      });
+
+      faqItems.forEach((item, index) => {
+        const panel = item.querySelector('.faq-item__panel');
+        if (index === 0) {
+          item.classList.add('is-open');
+          item.querySelector('.faq-item__toggle').setAttribute('aria-expanded', 'true');
+          panel.style.maxHeight = `${panel.scrollHeight}px`;
+        }
+      });
+
+      if (window.matchMedia('(min-width: 768px)').matches) {
+        setActiveNav('hero');
+      }
+    })();
+  </script>
+</body>
+</html>
